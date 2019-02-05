@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  jupyter:
+    build: .
+    ports:
+      - 8080:8080
+    volumes:
+      - ./files:/home/root
+    command: jupyter notebook --ip=0.0.0.0 --port=8080 --allow-root
