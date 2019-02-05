@@ -8,6 +8,8 @@ RUN rm cling_2019-01-23_ubuntu18.tar
 ENV PATH /cling_2019-01-23_ubuntu18/bin:$PATH
 
 RUN pip install jupyter
+RUN jupyter notebook --generate-config
+RUN echo "c.NotebookApp.ip = '0.0.0.0'" >> /root/.jupyter/jupyter_notebook_config.py
 
 WORKDIR /cling_2019-01-23_ubuntu18/share/cling/Jupyter/kernel
 RUN pip install -e .
