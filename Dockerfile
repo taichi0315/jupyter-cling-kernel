@@ -10,6 +10,7 @@ ENV PATH /cling_2019-01-23_ubuntu18/bin:$PATH
 RUN pip install jupyter
 
 WORKDIR /cling_2019-01-23_ubuntu18/share/cling/Jupyter/kernel
+RUN pip install -e .
 RUN jupyter-kernelspec install --user cling-cpp11
 RUN jupyter-kernelspec install --user cling-cpp14
 RUN jupyter-kernelspec install --user cling-cpp17
